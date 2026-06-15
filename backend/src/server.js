@@ -22,7 +22,6 @@
   app.use('/api/webhooks/stripe', express.raw({ type: 'application/json' }), webhookRoutes);
 
   // Security middleware
-app.use(helmet());
 app.use(cors({
   origin: [
     'http://localhost:3000',
@@ -34,7 +33,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-app.options('*', cors()); 
+app.options('*', cors());
 
   // Rate limiting
   const limiter = rateLimit({
