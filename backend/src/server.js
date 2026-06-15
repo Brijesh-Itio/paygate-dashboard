@@ -26,7 +26,13 @@
   app.use(cors({
     origin: process.env.FRONTEND_URL || 'http://localhost:3000',
     credentials: true,
-  }));
+  }));app.use(cors({
+    origin: [
+        process.env.FRONTEND_URL || 'http://localhost:3000',
+        'https://paygate-frontend.onrender.com'
+    ],
+    credentials: true,
+}));
 
   // Rate limiting
   const limiter = rateLimit({
