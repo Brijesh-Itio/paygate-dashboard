@@ -22,16 +22,14 @@
   app.use('/api/webhooks/stripe', express.raw({ type: 'application/json' }), webhookRoutes);
 
   // Security middleware
-  app.use(helmet());
-  app.use(cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-    credentials: true,
-  }));app.use(cors({
-    origin: [
-        process.env.FRONTEND_URL || 'http://localhost:3000',
-        'https://paygate-frontend.onrender.com'
-    ],
-    credentials: true,
+app.use(helmet());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'https://paygate-frontend.onrender.com'
+  ],
+  credentials: true,
 }));
 
   // Rate limiting
