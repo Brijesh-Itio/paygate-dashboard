@@ -30,7 +30,11 @@ app.use(cors({
     'https://paygate-frontend.onrender.com'
   ],
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+app.options('*', cors()); 
 
   // Rate limiting
   const limiter = rateLimit({
