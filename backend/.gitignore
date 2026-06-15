@@ -1,0 +1,22 @@
+node_modules/
+.env
+logs/
+*.log
+coverage/
+dist/
+
+
+# Coverage & build
+coverage/
+dist/
+
+
+# Dev only scripts
+seed.js
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vite
+*.local
